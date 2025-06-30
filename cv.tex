@@ -1,0 +1,267 @@
+% !TeX spellcheck = en_GB
+% !TeX program = pdflatex
+%
+% LuxSleek-CV 1.1 LaTeX template
+% Author: Kayvan Kazeminejad
+%
+%
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{lmodern}
+\usepackage{fontawesome5}
+\usepackage[utf8]{luainputenc}  % hence this preparation
+\usepackage[british]{babel}
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
+
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+% \usepackage{FiraSans}        % Change this to use any font, but keep it simple
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\is}{\par\vskip.5ex plus .4ex} % Item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{cvblue}#1}\par%
+     \vspace*{-2ex}{\color{cvblue}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+
+\begin{document}
+
+% Style definitions -- killing the unnecessary space and adding the skips explicitly
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+%  Left column -- top dark rectangle
+\colorbox{cvblue}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue!90}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][293mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{2.5ex}
+
+\Large Kayvan \textbf{\textsc{Kazeminejad}} \normalsize
+
+% Centering without extra vertical spacing
+\null\hfill\includegraphics[width=0.65\textwidth]{qr-code.eps}\hfill\null
+
+\vspace*{0.5ex} % Extra space after the picture
+
+%%
+%% Profile Summary %%
+%%
+\headleft{Profile Summary}
+I am an experienced \textit{developer} and \textit{architect} with over 25+ years of experience in a variety of platforms and programming languages including:\par
+Haskell, Rust, PureScript, Scala, NixOS, Plutus, Solidity, C/C++.\par
+I have worked in a number of industries including: \par
+Blockchain, Banking and Finance, Healthcare, Music and Video streaming, Entertainment, IoT, Hardware manufacturing, and Military.\par
+Haskell is my favorite programming language and I truly enjoy working on Haskell projects.
+
+%%
+%% Contact details %%
+%%
+\headleft{Contact details}
+\small % To fit more content
+\MVAt\ {\small kayvan@q2io.com} \\[0.4ex]
+\Mobilefone\ +1\,415\,636\,1124 \\[0.5ex]
+\faGithubSquare\ \href{https://github.com/kayvank}{kayvank} \\[0.5ex]
+\faLinkedinIn\ \href{http://www.linkedin.com/in/kayvankazeminejad}{kayvankazeminejad}
+\normalsize
+
+%%
+%% Personal Info
+%%
+\headleft{Personal information}
+%Year of birth: \textbf{1861} \\[0.5ex]
+Citizenship: \textbf{USA} \\[0.5ex]
+Family: \textbf{Married with children} \\[0.5ex]
+Languages: \textbf{English}, \textbf{Farsi}
+
+%%
+%% Skills
+%%
+\headleft{Skills}
+\begin{itemize}
+\item Haskell, Rust, PureScript, NixOS, Scala,
+\item Kubernetes, Helm charts, AWS, GCP, Terraform
+\item PostgreSQL, Redshift, Big Query, MongoDB, Redis, Apache Spark, Flink, Elasticsearch
+\item JavaScript, Node.js, GitHub
+\end{itemize}
+
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip2.5em% Left margin for the white area
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+
+%%
+%% Start main page
+%%
+
+\vspace{2ex}
+
+%%
+%% Experience
+%%
+\headright{Experience}
+
+%%
+%% IOHK
+%%
+\textsc{Haskell Developer} at \textit{IOHK (Remote)}  \dates{2023.09--Present} \\
+%
+    \smaller{Design and implementation of Marconi chain-indexer tool, while working with the PlutusApps team. The tool was used by a number of IOHK teams, reducing their development time significantly.}\\
+%
+    \smaller{Redesigned and upgrade Partner-Chain's Trustless Haskell, PureScript and Plutus smart contracts, allowing for seamless integration with non-IOHK blockchains}\\
+%
+    \smaller{Haskell and Plutus contribution in design and implementations of StableCoin while working with dJed team, which allowed for early release of the StableCoin Pricing-Oracle}\\
+%
+    \smaller{Contributed to design and implementation of the fastBft Consensus Rust platform while working with Innovations team, which lead to adaption of fastBft by the midnight blockchain}
+\is
+\is
+
+%%
+%% Soostone
+%%
+\textsc{Haskell Developer} at \textit{Soostone (Remote).}  \dates{2021.03--2023.09} \\
+%
+\smaller{Contributed to the development of the napkin, A sophisticated SQL meta-programming environment that accelerates modern data engineering efforts across multiple backends (w.g. BigQuery and Redshift}\\
+%
+\smaller{Design and implementation of the OAuth 2.0 flow for the “napkin” project, resulting in a much smoother user experience}\\
+%
+\smaller{Contribute to replacing the legacy Monad stack with a Polysemy effect system, resulting in a more maintainable and flexible architecture, hence reducing time to market}
+\is
+\is
+%%
+%% Truclabs
+%%
+
+\textsc{Senior Consultant} at \textit{Trucklabs (Remote).}  \dates{2020.03--2021.02} \\
+%
+\smaller{Built the backend portion for IoT event collection into AWS DynamoDB}\\
+%
+\smaller{Architected and developed multiple user-facing APIs including smart-trucks routing, fuel consumption, and ETA estimation. These contribution resulted in 11\% fuel consumption reduction and increased driver retention by 27\% }\\
+%
+\smaller{Scala, Apache Flink, Apache Spark, ElasticSearch, Redshift, DynamoDB, Node.js}
+
+\is
+\is
+
+%%
+%% Rchain
+%%
+\textsc{Senior Consultant} at \textit{RChain (Remote).}  \dates{2018.04--2020.03} \\
+%
+\smaller{Design and developed rSong, an on-chain music dApp that was showcased at MIT-Media-Lab as well as RCon3, the dApp was downloaded several thousand time}\\
+%
+\smaller{Contribute to design and implementation of rSpace, a Scala implementation of Tuple-Space used for RHolang smart-contracts storage layer}\\
+%
+\smaller{Scala, Node.js, Python, RHolang smart-contracts, Kubernetes, Helm charts}
+
+\is
+\is
+
+%%
+%% Vevo
+%%
+\textsc{Senior Consultant} at \textit{Vevo (San Francisco, CA).}  \dates{2015.11--2018.04} \\
+%
+\smaller{Build cloud-based data services enabling Vevo's music recommendation engine to improved user-retention by 17\%} \\
+%
+\smaller{Build HTTP APIs and a number of JSON-RPC services using Http4s, providing data-services to downstream teams as well Vevo clients}\\
+%
+\smaller{Mentor junior developers}\\
+%
+\smaller{Scala, Node.js, Python, Kubernetes, Helm charts, Terraform, AWS Serverless }
+
+\is
+\is
+%%
+%% Intel
+%%
+\textsc{Senior Consultant} at \textit{Intel(Santa Clara, CA).}  \dates{2013.09--2015.11} \\
+%
+\smaller{Contribute to design and implementation of VoD, Video on Demand, automated workflow for video assets encoding/decoding clusters, resulting in decreased video dissemination time by 39\% }\\
+%
+\smaller{Contributed to design and implementation of VoD encoder/decoder of video assets in C++ to take advantage of the new clusters, decreasing decoding time by 37\%}\\
+%
+\smaller{Deign and implementation of the VoD reporting system providing real-time status-reporting of transcoders pipeline}\\
+%
+\smaller{Scala, C++, Terraform, MongoDB, Cassandra, ElasticSearch, Kafka}
+
+\is
+\is
+%%
+%% Intel
+%%
+\textsc{Consultant} at \textit{Various locations}  \dates{2000-01--2013.09} \\
+\small{I worked as a consultant in various industries including, Banking, Finance, Healthcare, Defense, Hardware manufacturing, and Government}
+\is
+\is
+
+\end{minipage}
+
+%%
+%% Page 2
+%%
+\newpage
+
+\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+%  Left column -- top dark rectangle
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue!90}{\color{white}  %% LEFT BOX
+
+\begin{minipage}[t][10mm][t]{3.1\textwidth}
+\center
+\vspace*{2.5ex}
+
+\Large Kayvan \textbf{\textsc{Kazeminejad}} \hfil Curriculum Vitae \normalsize
+
+  \end{minipage}}
+  \end{minipage}
+
+
+%%
+%% Education
+%%
+\headright{Education}
+\textit{California State University, Sacramento}.  \dates{1994--1999} \\
+\small{Bachelor of Science in Computer Science and Mathematics}
+
+\headright{Certifications}
+
+\smaller{\textsc{Data Base Adminstation}} \textit{Northrop Grumman} \\
+\smaller{\textsc{Network Adminstation,}} \textit{Northrop Grumman.} \\
+\smaller{\textsc{Advance Network Programming,}} \textit{Northrop Grumman.} \\
+\smaller{\textsc{Game Theory,}} \textit{Coursera.} \\
+\smaller{\textsc{Cryptography,}} \textit{Coursera.} \\
+\smaller{\textsc{Solidity,}} \textit{Alchemy.} \\
+\is
+\is
+\headright{Hobbies}
+
+\textit{I am an Endurance Athlete, and have completed several IRONMAN}
+
+\end{document}

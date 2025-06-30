@@ -1,0 +1,54 @@
+name: LaTex Nix CI
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+
+      - name: free up disk space
+        run: |
+          # Remove software and language runtimes we're not using
+          sudo rm -rf \
+            "$AGENT_TOOLSDIRECTORY" \
+            /opt/google/chrome \
+            /opt/microsoft/msedge \
+            /opt/microsoft/powershell \
+            /opt/pipx \
+            /usr/lib/mono \
+            /usr/local/julia* \
+            /usr/local/lib/android \
+            /usr/local/lib/node_modules \
+            /usr/local/share/chromium \
+            /usr/local/share/powershell \
+            /usr/share/dotnet \
+            /usr/share/swift
+          df -h /
+
+      - name: flake check
+        run: nix flake check --accept-flake-config
+      - name: build cv
+        run: nix develop --accept-flake-config .# --command sh -c "latexmk -pdf  ./cv.tex"
+
+      - name: Upload cv
+        uses: actions/upload-artifact@v4
+        with:
+          name: CV files
+          path: |
+            ./*.pdf
+
+      - name: cache Nix store
+        uses: actions/cache@v3
+        with:
+          path: /nix
+          key: ${{ runner.os }}-nix-${{ hashFiles('**/flake.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-nix-
